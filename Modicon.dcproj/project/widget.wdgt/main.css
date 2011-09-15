@@ -67,7 +67,7 @@ body {
     background-repeat: repeat-x;
     height: 96px;
     opacity: 1;
-    border-color: rgba(0, 0, 0, 0.46875);
+    border-color: rgba(0, 0, 0, 0.496094);
     background-position: 50% 50%;
 }
 
@@ -81,7 +81,7 @@ body {
     margin-right: 0px;
     margin-bottom: 0px;
     width: auto;
-    border-color: rgba(0, 0, 0, 0.460938);
+    border-color: rgba(0, 0, 0, 0.457031);
 }
 
 #stack {
@@ -400,7 +400,7 @@ body {
     right: 0px;
     margin-left: auto;
     opacity: 1;
-    border-color: rgba(0, 0, 0, 0.464844);
+    border-color: rgba(0, 0, 0, 0.496094);
     background-position: 50% 50%;
 }
 
@@ -421,7 +421,7 @@ body {
     font-size: 11pt;
     font-family: 'Helvetica Neue';
     text-align: left;
-    border-color: rgba(0, 0, 0, 0.457031);
+    border-color: rgba(0, 0, 0, 0.453125);
     margin-right: auto;
     margin-bottom: auto;
     top: 38px;
@@ -482,7 +482,7 @@ body {
     font-size: 11pt;
     overflow: hidden;
     text-align: left;
-    border-color: rgba(0, 0, 0, 0.457031);
+    border-color: rgba(0, 0, 0, 0.453125);
     margin-right: auto;
     margin-bottom: auto;
     top: 88px;
@@ -507,7 +507,7 @@ body {
     font-size: 11pt;
     overflow: hidden;
     text-align: left;
-    border-color: rgba(0, 0, 0, 0.457031);
+    border-color: rgba(0, 0, 0, 0.453125);
     margin-right: auto;
     top: 138px;
     margin-bottom: auto;
@@ -566,7 +566,7 @@ body {
     right: 0px;
     margin-left: auto;
     opacity: 1;
-    border-color: rgba(0, 0, 0, 0.46875);
+    border-color: rgba(0, 0, 0, 0.496094);
     background-position: 50% 50%;
 }
 

@@ -205,45 +205,32 @@ function dragOver(event) {
 }
 
 // Define global variables for file names and lists
-var uri, uriParts, fileList, fileLength;
+var uri = [], uriParts = [];
 
 function dragDrop(event) {
-	fileList = "0"
-	fileLength = "0";
 	try {
 		uri = event.dataTransfer.getData("text/uri-list");
 		uri = uri.replace(/file:\/\/localhost/gi, "");
 		uri = uri.replace(/\%20/gi, "\\ ");
 		uri = uri.split("\n");
 		uri = uri.sort(sortAlphaNum);
-//		uriParts = uri[0].match(/(.+?)(\d+)(\.\w{3,4})$/);
-//		if (uriParts == null) { uriParts = uri[0].match(/(.+?)(\.\w{3,4})$/); }
 
-//		uriParts = uri[0].match(/(.+?)([^\/]+)(\.\w{3,4})$/);
-//		uriParts = uri[0].match(/(.+?)([^\/]+)(_[\w]+)(\.\w{3,4})$/);
-		uriParts = uri[0].match(/(.+?)([^\/^_]+)(\.\w{3,4})$/);
-//		uriParts = uri[0].split("_");
-		alert("uriParts[0] "+uriParts[0]);
-		alert("uriParts[1] "+uriParts[1]);
-		alert("uriParts[2] "+uriParts[2]);
-		alert("uriParts[3] "+uriParts[3]);
-		alert("uriParts[4] "+uriParts[4]);
-		alert("uri length "+uri.length);
-
-		alert("/opt/local/bin/png2icns "+uriParts[1]+"new.icns");
-		if (uri.length == 1) {
-//			widget.system("/opt/local/bin/icns2png -x -o "+uriParts[1]+" "+uriParts[0], endHandler).outputString;
-			widget.system("mogrify -level 16,254,0.8 -modulate 100,0 "+uriParts[1]+"*"+uriParts[3], endHandler).outputString;
-//			widget.system("/opt/local/bin/png2icns "+uriParts[1]+"new.icns "+uriParts[0], endHandler).outputString;
-			alert("processing single file");
-			showSuccess(event);
-		} else {
-//			widget.system("/opt/local/bin/icns2png -x -o "+uriParts[1]+" "+uri.join(" "), endHandler).outputString;
-			widget.system("mogrify -level 16,254,0.8 -modulate 100,0 "+uri.join(" "), endHandler).outputString;
-//			widget.system("/opt/local/bin/png2icns "+uriParts[1]+"new.icns "+uri.join(" "), endHandler).outputString;
-			alert("processing group of files");
-			showSuccess(event);
+		var fileListing = "";
+		for (i = 0; i < uri.length; i++){
+			uriParts[i] = uri[i].match(/(.+?)([^\/^_]+)(\.\w{3,4})$/);
+			fileListing = fileListing+" "+uriParts[i][0];
 		}
+//		alert("uriParts "+uriParts[1].join("\n"));
+//		alert("uri length "+uri.length);
+//		alert("fileListing1 "+fileListing);
+
+		widget.system("/opt/local/bin/icns2png -x -o "+uriParts[0][1]+fileListing, processImages).outputString;
+//			widget.system("/opt/local/bin/icns2png -x -o "+uriParts[1]+" "+uri.join(" "), endHandler).outputString;
+//			widget.system("mogrify -level 16,254,0.8 -modulate 100,0 "+uri.join(" "), endHandler).outputString;
+//			widget.system("/opt/local/bin/png2icns "+uriParts[1]+"new.icns "+uri.join(" "), endHandler).outputString;
+
+		alert("processing group of files 1");
+		showSuccess(event);
 	} catch (ex) {
 		alert("Problem fetching URI! " + ex);
 		showFail(event);
@@ -253,24 +240,46 @@ function dragDrop(event) {
 	event.preventDefault();
 }
 
-function continueProcess (output) {
-    alert("continueProcess function started");
+function processImages(event) {
+	try {
+		var fileListing = "";
+		for (i = 0; i < uri.length; i++){
+			fileListing = fileListing+" "+uriParts[i][1]+uriParts[i][2]+"_*.png";
+		}
+//		alert("fileListing2 "+fileListing);
 
-//	try {
-//		if (uri.length == 1) {
-//			widget.system("png2icns "+uriParts[1]+"*"+uriParts[3], endHandler).outputString;
-//			showSuccess(event);
-//		} else {
-//			widget.system("png2icns "+uri.join(" "), endHandler).outputString;
-//			showSuccess(event);
+		widget.system("mogrify -level 16,254,0.8 -modulate 100,0 "+fileListing, createICNS).outputString;
+
+		alert("processing group of files 2");
+		showSuccess(event);
+	} catch (ex) {
+		alert("Problem fetching URI! " + ex);
+		showFail(event);
+	}
+}
+
+function createICNS(event) {
+	try {
+//		var fileListing = "";
+//		for (i = 0; i < uri.length; i++){
+//			fileListing = fileListing+" "+uriParts[i][1]+uriParts[i][2]+"_*.png";
 //		}
-//	} catch (ex) {
-//		alert("Problem fetching URI: " + ex);
-//		showFail(event);
-//	}
+//		alert("fileListing3 "+fileListing);
 
-//	alert("output = "+output.outputString);
-//	showMain();
+		for (i = 0; i < uri.length; i++){
+			var fileListing = uriParts[i][1]+uriParts[i][2];
+			alert("creating ICNS file from original: "+fileListing+"*.png");
+			widget.system("/opt/local/bin/png2icns "+fileListing+"_new.icns "+fileListing+"*.png", endHandler).outputString;
+		}
+
+//		widget.system("/opt/local/bin/png2icns "+uriParts[0][1]+"new.icns "+uri.join(" "), endHandler).outputString;
+
+		alert("processing group of files 3");
+		showSuccess(event);
+	} catch (ex) {
+		alert("Problem fetching URI! " + ex);
+		showFail(event);
+	}
 }
 
 function endHandler (output) {

@@ -19,7 +19,7 @@
 		</array>
 	</dict>
 	<key>ContentViewType</key>
-	<integer>0</integer>
+	<integer>2</integer>
 	<key>Dashboard Widget Prefs</key>
 	<dict>
 		<key>id</key>
@@ -52,7 +52,7 @@
 		<key>Save</key>
 		<false/>
 		<key>SavePath</key>
-		<string>/Users/iaian7/Dropbox/Documents/Widgets/VF Sheets</string>
+		<string>/Users/iaian7/Dropbox/Documents/Widgets/Modicon</string>
 		<key>enableSimulation</key>
 		<true/>
 		<key>simulatedHost</key>
@@ -258,7 +258,11 @@
 			</array>
 		</array>
 		<key>Objects view last selections</key>
-		<array/>
+		<array>
+			<array>
+				<integer>9223372036854775807</integer>
+			</array>
+		</array>
 		<key>Visible StackLayout Views</key>
 		<array>
 			<string>front</string>
