@@ -120,7 +120,7 @@ var wid = widget.identifier;
 var prefLevels = loadPref(wid+"levels","16,255,0.8");
 var prefHuesat = loadPref(wid+"huesat","100,0,0");
 var prefLocation1 = loadPref(wid+"location1","/usr/local/bin/");
-var prefLocation2 = loadPref(wid+"location2","/usr/local/bin/");
+var prefLocation2 = loadPref(wid+"location2","/opt/local/bin/");
 var prefName = loadPref(wid+"name","_new");
 
 // Preference Saving
@@ -223,8 +223,10 @@ function dragDrop(event) {
 //		alert("uriParts "+uriParts[1].join("\n"));
 //		alert("uri length "+uri.length);
 		alert("fileListing1 "+fileListing);
+		alert("prefLocation2 = "+prefLocation2);
+		alert("command string: "+prefLocation2+"icns2png -x -o "+uriParts[0][1]+fileListing, processImages);
 
-		widget.system("/opt/local/bin/icns2png -x -o "+uriParts[0][1]+fileListing, processImages).outputString;
+		widget.system(prefLocation2+"icns2png -x -o "+uriParts[0][1]+fileListing, processImages).outputString;
 //			widget.system("/opt/local/bin/icns2png -x -o "+uriParts[1]+" "+uri.join(" "), endHandler).outputString;
 //			widget.system("mogrify -level 16,254,0.8 -modulate 100,0 "+uri.join(" "), endHandler).outputString;
 //			widget.system("/opt/local/bin/png2icns "+uriParts[1]+"new.icns "+uri.join(" "), endHandler).outputString;
@@ -248,7 +250,7 @@ function processImages(event) {
 		}
 		alert("fileListing2 "+fileListing);
 
-		widget.system("mogrify -level 16,254,0.8 -modulate 100,0 "+fileListing, createICNS).outputString;
+		widget.system(prefLocation1+"mogrify -level "+prefLevels+" -modulate "+prefHuesat+" "+fileListing, createICNS).outputString;
 
 		alert("processing group of files 2");
 		showSuccess(event);
@@ -269,8 +271,7 @@ function createICNS(event) {
 		for (i = 0; i < uri.length; i++){
 			var fileListing = uriParts[i][1]+uriParts[i][2];
 			alert("creating ICNS file: "+fileListing+prefName.replace(" ", "\\ ")+".icns ");
-			alert("prefName = '"+prefName+"'");
-			widget.system("/opt/local/bin/png2icns "+fileListing+prefName.replace(" ", "\\ ")+".icns "+fileListing+"_*.png", endHandler).outputString;
+			widget.system(prefLocation2+"png2icns "+fileListing+prefName.replace(" ", "\\ ")+".icns "+fileListing+"_*.png", endHandler).outputString;
 		}
 
 //		widget.system("/opt/local/bin/png2icns "+uriParts[0][1]+"new.icns "+uri.join(" "), endHandler).outputString;
