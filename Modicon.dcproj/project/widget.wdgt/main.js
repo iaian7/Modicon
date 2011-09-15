@@ -217,12 +217,12 @@ function dragDrop(event) {
 
 		var fileListing = "";
 		for (i = 0; i < uri.length; i++){
-			uriParts[i] = uri[i].match(/(.+?)([^\/^_]+)(\.\w{3,4})$/);
+			uriParts[i] = uri[i].match(/(.+?)([^\/]+)(\.\w{3,4})$/);
 			fileListing = fileListing+" "+uriParts[i][0];
 		}
 //		alert("uriParts "+uriParts[1].join("\n"));
 //		alert("uri length "+uri.length);
-//		alert("fileListing1 "+fileListing);
+		alert("fileListing1 "+fileListing);
 
 		widget.system("/opt/local/bin/icns2png -x -o "+uriParts[0][1]+fileListing, processImages).outputString;
 //			widget.system("/opt/local/bin/icns2png -x -o "+uriParts[1]+" "+uri.join(" "), endHandler).outputString;
@@ -246,7 +246,7 @@ function processImages(event) {
 		for (i = 0; i < uri.length; i++){
 			fileListing = fileListing+" "+uriParts[i][1]+uriParts[i][2]+"_*.png";
 		}
-//		alert("fileListing2 "+fileListing);
+		alert("fileListing2 "+fileListing);
 
 		widget.system("mogrify -level 16,254,0.8 -modulate 100,0 "+fileListing, createICNS).outputString;
 
@@ -264,7 +264,7 @@ function createICNS(event) {
 //		for (i = 0; i < uri.length; i++){
 //			fileListing = fileListing+" "+uriParts[i][1]+uriParts[i][2]+"_*.png";
 //		}
-//		alert("fileListing3 "+fileListing);
+		alert("fileListing3 "+fileListing);
 
 		for (i = 0; i < uri.length; i++){
 			var fileListing = uriParts[i][1]+uriParts[i][2];
