@@ -117,11 +117,11 @@ if (window.widget) {
 // Begin app-specific functions
 
 var wid = widget.identifier;
-var prefLevels = loadPref(wid+"levels","16,254,0.8");
+var prefLevels = loadPref(wid+"levels","16,255,0.8");
 var prefHuesat = loadPref(wid+"huesat","100,0,0");
-var prefLocation = loadPref(wid+"location","/usr/local/bin/");
-var prefCommands = loadPref(wid+"commands","");
-var prefName = loadPref(wid+"name","_New");
+var prefLocation1 = loadPref(wid+"location1","/usr/local/bin/");
+var prefLocation2 = loadPref(wid+"location2","/usr/local/bin/");
+var prefName = loadPref(wid+"name","_new");
 
 // Preference Saving
 
@@ -139,8 +139,8 @@ function loadPrefs() {
 //	alert("ready!");
 	document.getElementById("levels").value = prefLevels;
 	document.getElementById("huesat").value = prefHuesat;
-	document.getElementById("location").value = prefLocation;
-	document.getElementById("commands").value = prefCommands;
+	document.getElementById("location1").value = prefLocation1;
+	document.getElementById("location2").value = prefLocation2;
 	document.getElementById("name").value = prefName;
 }
 
@@ -154,8 +154,8 @@ function updatePrefs() {
 	if (window.widget) {
 		widget.setPreferenceForKey(prefLevels,wid+"levels");
 		widget.setPreferenceForKey(prefHuesat,wid+"huesat");
-		widget.setPreferenceForKey(prefLocation,wid+"location");
-		widget.setPreferenceForKey(prefCommands,wid+"commands");
+		widget.setPreferenceForKey(prefLocation1,wid+"location1");
+		widget.setPreferenceForKey(prefLocation2,wid+"location2");
 		widget.setPreferenceForKey(prefName,wid+"name");
 	}
 }
@@ -164,8 +164,8 @@ function erasePrefs() {
 	if (window.widget) {
 		widget.setPreferenceForKey(null,wid+"levels");
 		widget.setPreferenceForKey(null,wid+"huesat");
-		widget.setPreferenceForKey(null,wid+"location");
-		widget.setPreferenceForKey(null,wid+"commands");
+		widget.setPreferenceForKey(null,wid+"location1");
+		widget.setPreferenceForKey(null,wid+"location2");
 		widget.setPreferenceForKey(null,wid+"name");
 	}
 }
@@ -180,15 +180,15 @@ function updateHuesat(event) {
 	prefHuesat = document.getElementById("huesat").value;
 }
 
-function updateLocation(event) {
-	prefLocation = document.getElementById("location").value;
+function updateLocation1(event) {
+	prefLocation1 = document.getElementById("location1").value;
 }
 
-function updatecommands(event) {
-	prefCommands = document.getElementById("commands").value;
+function updateLocation2(event) {
+	prefLocation2 = document.getElementById("location2").value;
 }
 
-function updatename(event) {
+function updateName(event) {
 	prefName = document.getElementById("name").value;
 }
 
@@ -264,12 +264,13 @@ function createICNS(event) {
 //		for (i = 0; i < uri.length; i++){
 //			fileListing = fileListing+" "+uriParts[i][1]+uriParts[i][2]+"_*.png";
 //		}
-		alert("fileListing3 "+fileListing);
+//		alert("fileListing3 "+fileListing);
 
 		for (i = 0; i < uri.length; i++){
 			var fileListing = uriParts[i][1]+uriParts[i][2];
-			alert("creating ICNS file from original: "+fileListing+"*.png");
-			widget.system("/opt/local/bin/png2icns "+fileListing+"_new.icns "+fileListing+"*.png", endHandler).outputString;
+			alert("creating ICNS file: "+fileListing+prefName.replace(" ", "\\ ")+".icns ");
+			alert("prefName = '"+prefName+"'");
+			widget.system("/opt/local/bin/png2icns "+fileListing+prefName.replace(" ", "\\ ")+".icns "+fileListing+"_*.png", endHandler).outputString;
 		}
 
 //		widget.system("/opt/local/bin/png2icns "+uriParts[0][1]+"new.icns "+uri.join(" "), endHandler).outputString;

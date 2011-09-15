@@ -5,7 +5,7 @@
  code generator otherwise the changes will be lost.
  */
 var localizedStrings = {
-    "commandsText": "extra IM commands",
+    "commandsText": "libicns install location",
     "copyrightText": "©2009 John Einselen / Vectorform LLC",
     "done": "done",
     "download": "download",
@@ -14,10 +14,12 @@ var localizedStrings = {
     "iaian7com": "For more information, please visit iaian7.com/dashboard/sheets",
     "label1": "black, white, gamma",
     "label2": "brightness, sat, hue",
+    "location1Text": "ImageMagick install location",
+    "location2Text": "libicns install location",
     "locationText": "ImageMagick install location",
     "nameFileText": "finished file suffix",
     "nameSpriteText": "extra IM commands",
-    "nameText": "finished file suffix",
+    "nameText": "finished file suffix (blank overwrites)",
     "nameText2": "file sheet prefix",
     "new": "new update available!",
     "newVersion": "version number\nversion description",
@@ -26,5 +28,6 @@ var localizedStrings = {
     "successDetails": "depending on number of icons\nthis could take a minute",
     "wrong": "wrong file format\nplease try again"
 };
+
 
 

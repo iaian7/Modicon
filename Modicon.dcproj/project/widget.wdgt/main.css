@@ -67,7 +67,7 @@ body {
     background-repeat: repeat-x;
     height: 96px;
     opacity: 1;
-    border-color: rgba(0, 0, 0, 0.496094);
+    border-color: rgba(0, 0, 0, 0.5);
     background-position: 50% 50%;
 }
 
@@ -81,7 +81,7 @@ body {
     margin-right: 0px;
     margin-bottom: 0px;
     width: auto;
-    border-color: rgba(0, 0, 0, 0.457031);
+    border-color: rgba(0, 0, 0, 0.5);
 }
 
 #stack {
@@ -400,11 +400,11 @@ body {
     right: 0px;
     margin-left: auto;
     opacity: 1;
-    border-color: rgba(0, 0, 0, 0.496094);
+    border-color: rgba(0, 0, 0, 0.5);
     background-position: 50% 50%;
 }
 
-#location {
+#location1 {
     position: absolute;
     color: rgb(255, 255, 255);
     -webkit-border-top-left-radius: 5px 5px;
@@ -421,14 +421,14 @@ body {
     font-size: 11pt;
     font-family: 'Helvetica Neue';
     text-align: left;
-    border-color: rgba(0, 0, 0, 0.453125);
+    border-color: rgba(0, 0, 0, 0.5);
     margin-right: auto;
     margin-bottom: auto;
     top: 38px;
     background-position: 50% 50%;
 }
 
-#locationText {
+#location1Text {
     font-family: HelveticaNeue;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -464,7 +464,7 @@ body {
     top: 98px;
 }
 
-#commands {
+#location2 {
     position: absolute;
     font-family: HelveticaNeue;
     color: rgb(255, 255, 255);
@@ -482,7 +482,7 @@ body {
     font-size: 11pt;
     overflow: hidden;
     text-align: left;
-    border-color: rgba(0, 0, 0, 0.453125);
+    border-color: rgba(0, 0, 0, 0.5);
     margin-right: auto;
     margin-bottom: auto;
     top: 88px;
@@ -507,7 +507,7 @@ body {
     font-size: 11pt;
     overflow: hidden;
     text-align: left;
-    border-color: rgba(0, 0, 0, 0.453125);
+    border-color: rgba(0, 0, 0, 0.5);
     margin-right: auto;
     top: 138px;
     margin-bottom: auto;
@@ -530,7 +530,7 @@ body {
     width: auto;
 }
 
-#commandsText {
+#location2Text {
     font-family: HelveticaNeue;
     text-overflow: ellipsis;
     overflow: hidden;
@@ -566,7 +566,7 @@ body {
     right: 0px;
     margin-left: auto;
     opacity: 1;
-    border-color: rgba(0, 0, 0, 0.496094);
+    border-color: rgba(0, 0, 0, 0.5);
     background-position: 50% 50%;
 }
 
