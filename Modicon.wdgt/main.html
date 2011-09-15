@@ -1,0 +1,57 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" type="text/css" href="Parts/Transitions.css">
+    <script type="text/javascript" src="Parts/parts.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleAnimator.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleInfoButton.js" charset="utf-8"></script>
+    <script type="text/javascript" src="localizedStrings.js" charset="utf-8"></script>
+    <script type="text/javascript" src="main.js" charset="utf-8"></script>
+    <script type="text/javascript" src="file:///System/Library/WidgetResources/AppleClasses/AppleSlider.js" charset="utf-8"></script>
+</head>
+<body onload="load();">
+    <div id="front">
+        <img id="frontImg" src="Parts/Images/front.png" alt="">
+        <div id="info"></div>
+        <div id="stack"><div id="main">
+                <div id="input" ondrop="dragDrop(event)" ondragover="dragOver(event)" ondragenter="dragEnter(event)">
+                    <div id="drop"></div>
+                </div>
+                <input type="text" name="levels" value="16,255,0.8" id="levels" onchange="updateLevels(event)" onkeyup="updateLevels(event)" onclick="selectIt(event)" onfocus="selectIt(event)">
+                <input type="text" name="huesat" value="100,0,0" id="huesat" onchange="updateHuesat(event)" onkeyup="updateHuesat(event)" onclick="selectIt(event)" onfocus="selectIt(event)" maxlength="0">
+                <div id="label1"></div>
+                <div id="label2"></div>
+            </div><div id="success">
+                <div id="successText"></div>
+                <div id="successButton"></div>
+                <div id="successDetails"></div>
+            </div><div id="fail" style="display: block; ">
+                <div id="failText"></div>
+                <div id="failButton"></div>
+            </div><div id="wrong" style="display: block; ">
+                <div id="wrongText"></div>
+                <div id="wrongButton"></div>
+            </div><div id="update">
+                <div id="new"></div>
+                <div id="newVersion"></div>
+                <div id="skip"></div>
+                <div id="download"></div>
+            </div></div>
+    </div>
+    <div id="back">
+        <img id="backImg" src="Parts/Images/back.png" alt="">
+        <div id="location1Text"></div>
+        <input type="text" name="location1" value="/usr/local/bin/" id="location1" onchange="updateLocation1(event)" onkeyup="updateLocation1(event)">
+        <div id="location2Text"></div>
+        <input type="text" name="location2" value="/opt/local/bin/" id="location2" maxlength="0" onkeyup="updateLocation2(event)" onchange="updateLocation2(event)">
+        <div id="nameText"></div>
+        <input type="text" name="name" value="_new" id="name" maxlength="0" onkeyup="updateName(event)" onchange="updateName(event)">
+        <div id="iaian7com" onclick="iaian7(event)"></div>
+        <div id="text"></div>
+        <div id="doneSave"></div>
+    </div>
+</body>
+</html>
