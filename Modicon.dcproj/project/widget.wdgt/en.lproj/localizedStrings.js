@@ -5,7 +5,6 @@
  code generator otherwise the changes will be lost.
  */
 var localizedStrings = {
-    "commandsText": "libicns install location",
     "copyrightText": "©2012 John Einselen, Vectorform LLC",
     "done": "done",
     "download": "download",
@@ -17,13 +16,8 @@ var localizedStrings = {
     "label2": "brightness, sat, hue",
     "location1Text": "ImageMagick",
     "location2Text": "libicns",
-    "locationText": "ImageMagick install location",
     "nameDetails": "leave blank to overwrite files",
-    "nameFileText": "finished file suffix",
-    "nameSpriteText": "extra IM commands",
     "nameText": "new file suffix",
-    "nameText1": "new file suffix\n(blank will overwrite)",
-    "nameText2": "file sheet prefix",
     "new": "new update available!",
     "newVersion": "version number\nversion description",
     "skip": "skip version",
