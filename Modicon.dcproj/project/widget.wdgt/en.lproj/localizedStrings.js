@@ -6,20 +6,23 @@
  */
 var localizedStrings = {
     "commandsText": "libicns install location",
-    "copyrightText": "©2009 John Einselen / Vectorform LLC",
+    "copyrightText": "©2012 John Einselen, Vectorform LLC",
     "done": "done",
     "download": "download",
-    "drop": "drop ICNS files here",
+    "drop": "drop icon files here",
+    "dropDetail": "must be .icns format",
     "fail": "file processing failed\nplease try again",
-    "iaian7com": "For more information, please visit iaian7.com/dashboard/sheets",
+    "iaian7com": "For more information, please visit iaian7.com/dashboard/modicon",
     "label1": "black, white, gamma",
     "label2": "brightness, sat, hue",
-    "location1Text": "ImageMagick install location",
-    "location2Text": "libicns install location",
+    "location1Text": "ImageMagick",
+    "location2Text": "libicns",
     "locationText": "ImageMagick install location",
+    "nameDetails": "leave blank to overwrite files",
     "nameFileText": "finished file suffix",
     "nameSpriteText": "extra IM commands",
-    "nameText": "finished file suffix (blank overwrites)",
+    "nameText": "new file suffix",
+    "nameText1": "new file suffix\n(blank will overwrite)",
     "nameText2": "file sheet prefix",
     "new": "new update available!",
     "newVersion": "version number\nversion description",
@@ -28,6 +31,7 @@ var localizedStrings = {
     "successDetails": "depending on number of icons\nthis could take a minute",
     "wrong": "wrong file format\nplease try again"
 };
+
 
 
 
