@@ -5,22 +5,19 @@
  code generator otherwise the changes will be lost.
  */
 var localizedStrings = {
-    "commandsText": "libicns install location",
-    "copyrightText": "©2009 John Einselen / Vectorform LLC",
+    "copyrightText": "©2012 John Einselen, Vectorform LLC",
     "done": "done",
     "download": "download",
-    "drop": "drop ICNS files here",
+    "drop": "drop icon files here",
+    "dropDetail": "must be .icns format",
     "fail": "file processing failed\nplease try again",
-    "iaian7com": "For more information, please visit iaian7.com/dashboard/sheets",
+    "iaian7com": "For more information, please visit iaian7.com/dashboard/modicon",
     "label1": "black, white, gamma",
     "label2": "brightness, sat, hue",
-    "location1Text": "ImageMagick install location",
-    "location2Text": "libicns install location",
-    "locationText": "ImageMagick install location",
-    "nameFileText": "finished file suffix",
-    "nameSpriteText": "extra IM commands",
-    "nameText": "finished file suffix (blank overwrites)",
-    "nameText2": "file sheet prefix",
+    "location1Text": "ImageMagick",
+    "location2Text": "libicns",
+    "nameDetails": "leave blank to overwrite files",
+    "nameText": "new file suffix",
     "new": "new update available!",
     "newVersion": "version number\nversion description",
     "skip": "skip version",
@@ -28,6 +25,7 @@ var localizedStrings = {
     "successDetails": "depending on number of icons\nthis could take a minute",
     "wrong": "wrong file format\nplease try again"
 };
+
 
 
 
