@@ -365,11 +365,11 @@ body {
     opacity: 0.5;
     margin-top: auto;
     margin-right: auto;
-    bottom: 30px;
     line-height: 10px;
     letter-spacing: 0px;
     font-size: 11px;
     height: 25px;
+    bottom: 28px;
 }
 
 #levels {
@@ -657,7 +657,6 @@ body {
     overflow: hidden;
     position: absolute;
     color: rgb(255, 255, 255);
-    text-shadow: rgb(0, 0, 0) 0px -1px 0px;
     width: 160px;
     text-align: center;
     opacity: 0.5;
@@ -666,7 +665,8 @@ body {
     height: 16px;
     right: 20px;
     margin-left: auto;
-    font-size: 12px;
+    font-size: 11px;
+    text-shadow: none;
 }
 
 #rectangleShape1 {
